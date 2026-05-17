@@ -499,10 +499,10 @@ var Govee = class extends EventEmitter {
         device.state.brightness = data.brightness;
         device.state.isOn = data.onOff;
         device.state.color = data.color;
-        if (!data.color.colorTemInKelvin) {
+        if (!data.colorTemInKelvin) {
           device.state.colorKelvin = 0;
         } else {
-          device.state.colorKelvin = data.color.colorTemInKelvin;
+          device.state.colorKelvin = data.colorTemInKelvin;
         }
         var stateChanged = [];
         var colorChanged = oldState.color.r !== data.color.r || oldState.color.g !== data.color.g || oldState.color.b !== data.color.b;
