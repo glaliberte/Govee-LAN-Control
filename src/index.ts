@@ -312,7 +312,7 @@ class Govee extends EventEmitter
 
                 if (!data.color.colorTemInKelvin)
                 {
-                    device.state.colorKelvin = ct.rgb2colorTemperature({ red: data.color.r, green: data.color.g, blue: data.color.b });
+                    device.state.colorKelvin = 0;//ct.rgb2colorTemperature({ red: data.color.r, green: data.color.g, blue: data.color.b });
                 } else
                 {
                     device.state.colorKelvin = data.color.colorTemInKelvin;

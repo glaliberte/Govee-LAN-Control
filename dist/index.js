@@ -363,7 +363,6 @@ var createSocket_default = () => {
 
 // src/index.ts
 var import_events = require("events");
-var ct2 = __toESM(require("color-temperature"));
 var Device = class extends import_events.EventEmitter {
   constructor(data, GoveeInstance, socket) {
     super();
@@ -533,7 +532,7 @@ var Govee = class extends import_events.EventEmitter {
         device.state.isOn = data.onOff;
         device.state.color = data.color;
         if (!data.color.colorTemInKelvin) {
-          device.state.colorKelvin = ct2.rgb2colorTemperature({ red: data.color.r, green: data.color.g, blue: data.color.b });
+          device.state.colorKelvin = 0;
         } else {
           device.state.colorKelvin = data.color.colorTemInKelvin;
         }
